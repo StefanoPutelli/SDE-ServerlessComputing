@@ -1,6 +1,6 @@
 To start the project use in the root folder:
 
-```
+```bash
 sudo docker-compose up --build --force-recreate
 ```
 
