@@ -1,0 +1,11 @@
+services:
+  sde:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: "development"
+    volumes:
+      [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
+    command: sh -c "npm run dev_ex1"  # 

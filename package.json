@@ -3,15 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "deploy_ex1": "wrangler deploy -c config/ex1.toml",
-    "deploy_ex2": "wrangler deploy -c config/ex2.toml",
-
-    "dev_ex1": "wrangler dev -c config/ex1.toml",
-    "dev_ex2": "wrangler dev -c config/ex2.toml"
+    "deploy_ex1": "wrangler deploy -c config/ex1.toml --local",
+    "deploy_ex2": "wrangler deploy -c config/ex2.toml --local",
+    "dev_ex1": "wrangler dev -c config/ex1.toml --local",
+    "dev_ex2": "wrangler dev -c config/ex2.toml --local"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.5.2",
-    "wrangler": "^3.60.3",
-    "vitest": "2.0.5"
+    "vitest": "2.0.5",
+    "wrangler": "^3.60.3"
   }
 }
