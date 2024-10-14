@@ -9,7 +9,7 @@ sudo docker-compose up --build --force-recreate
 
 required:
 ```
-docker\
+docker
 docker-compose
 ```
 
