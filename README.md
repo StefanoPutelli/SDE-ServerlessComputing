@@ -14,7 +14,7 @@ sudo docker-compose up {ex1-ex2...} --build --force-recreate --remove-orphans
 
 required:
 ```
-docker\
+docker
 docker-compose
 ```
 
