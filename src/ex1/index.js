@@ -1,5 +1,5 @@
-// Example 1 
-// Basic backend that handle GET, POST, DELETE, PUT
+// Exercise 1 
+// Create a backend that respond 
 
 export default {
 	async fetch(request, env, ctx) {

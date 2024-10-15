@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile
     environment:
       NODE_ENV: "development"
+      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
     volumes:
       [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
     command: sh -c "npm run example"  # 
@@ -16,6 +17,7 @@ services:
       dockerfile: Dockerfile
     environment:
       NODE_ENV: "development"
+      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
     volumes:
       [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
     command: sh -c "npm run ex1"  # 
@@ -26,6 +28,7 @@ services:
       dockerfile: Dockerfile
     environment:
       NODE_ENV: "development"
+      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
     volumes:
       [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
     command: sh -c "npm run ex2"  # 
@@ -36,6 +39,7 @@ services:
       dockerfile: Dockerfile
     environment:
       NODE_ENV: "development"
+      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
     volumes:
       [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
     command: sh -c "npm run ex3"  # 

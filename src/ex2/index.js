@@ -1,4 +1,4 @@
-// Example 1 
+// Exercise 1 
 // Basic backend that handle GET, POST, DELETE, PUT
 
 export default {
