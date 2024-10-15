@@ -1,5 +1,5 @@
 services:
-  sde:
+  example:
     network_mode: host
     build:
       context: .
@@ -8,4 +8,34 @@ services:
       NODE_ENV: "development"
     volumes:
       [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
-    command: sh -c "npm run dev_ex1"  # 
+    command: sh -c "npm run example"  # 
+  ex1:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: "development"
+    volumes:
+      [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
+    command: sh -c "npm run ex1"  # 
+  ex2:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: "development"
+    volumes:
+      [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
+    command: sh -c "npm run ex2"  # 
+  ex3:
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: "development"
+    volumes:
+      [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
+    command: sh -c "npm run ex3"  # 
