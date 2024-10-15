@@ -2,3 +2,5 @@ name = "ex-1"
 main = "../src/ex1/index.js"
 compatibility_date = "2024-10-11"
 compatibility_flags = ["nodejs_compat"]
+
+test
