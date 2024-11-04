@@ -22,6 +22,3 @@ COPY . .
 
 # Espone la porta che l'app utilizza, se richiesta in modalità dev
 EXPOSE 8787
-
-# Imposta il comando di default, con `tail -f /dev/null` per mantenere il container in esecuzione
-CMD ["npm", "run", "dev_ex1"]

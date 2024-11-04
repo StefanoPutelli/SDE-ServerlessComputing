@@ -16,7 +16,7 @@ export default {
 				}
 			})
 		} else if(request.method === "DELETE"){
-			return new Response("I recived a DELETE!", {
+			return new Response("I recived a DELET!", {
 				headers: {
 					"Content-Type": "text/html"
 				}

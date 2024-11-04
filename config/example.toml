@@ -2,3 +2,7 @@ name = "ex-1"
 main = "../src/example/index.js"
 compatibility_date = "2024-10-11"
 compatibility_flags = ["nodejs_compat"]
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "example"
+database_id = "17e7b089-c3b5-4839-8ca1-41d76a9f8f3c"

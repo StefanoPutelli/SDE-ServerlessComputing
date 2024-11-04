@@ -5,8 +5,8 @@
   "scripts": {
     "example": "node src/insertDB.js config/example.toml example && wrangler dev -c config/example.toml --local",
     "ex1": "wrangler dev -c config/ex1.toml --local",
-    "ex2": "node src/insertDB.js config/ex2.toml ex2 && wrangler dev -c config/ex2.toml --local",
-    "ex3": "node src/insertDB.js config/ex3.toml ex3 && wrangler dev -c config/ex3.toml --local",
+    "ex2": "wrangler dev -c config/ex2.toml --local",
+    "ex3": "wrangler dev -c config/ex3.toml --local",
     "deploy_ex1": "wrangler deploy -c config/ex1.toml",
     "deploy_ex2": "wrangler deploy -c config/ex2.toml"
   },
@@ -16,3 +16,4 @@
     "wrangler": "^3.60.3"
   }
 }
+    

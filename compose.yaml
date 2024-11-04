@@ -1,6 +1,7 @@
 services:
-  example:
+  sde:
     network_mode: host
+    container_name: sde
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,37 +10,5 @@ services:
       CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
     volumes:
       [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
-    command: sh -c "npm run example"  # 
-  ex1:
-    network_mode: host
-    build:
-      context: .
-      dockerfile: Dockerfile
-    environment:
-      NODE_ENV: "development"
-      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
-    volumes:
-      [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
-    command: sh -c "npm run ex1"  # 
-  ex2:
-    network_mode: host
-    build:
-      context: .
-      dockerfile: Dockerfile
-    environment:
-      NODE_ENV: "development"
-      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
-    volumes:
-      [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
-    command: sh -c "npm run ex2"  # 
-  ex3:
-    network_mode: host
-    build:
-      context: .
-      dockerfile: Dockerfile
-    environment:
-      NODE_ENV: "development"
-      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
-    volumes:
-      [.:/app] # Monta la directory corrente per aggiornamenti dinamici del codice
-    command: sh -c "npm run ex3"  # 
+    stdin_open: true 
+    tty: true
