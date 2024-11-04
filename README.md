@@ -5,11 +5,12 @@ To start the project use in the root folder:
 
 For Linux or Mac
 ```bash
-./linux-start.sh {ex1-ex2...}
+./linux-start.sh
 ```
 For Windows
 ```bash
-sudo docker-compose up {ex1-ex2...} --build --force-recreate --remove-orphans
+docker-compose up -d --build --force-recreate --remove-orphans
+docker-compose exec sde bash
 ```
 
 required:
