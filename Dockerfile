@@ -8,6 +8,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     git \
     bash \
+    nano \
     && rm -rf /var/lib/apt/lists/*
 
 # Copia il package.json e il package-lock.json per installare le dipendenze
