@@ -8,16 +8,33 @@ export interface Env {
 	async fetch(request, env): Promise<Response> {
 	  const { pathname, searchParams } = new URL(request.url);
 	  const params = new URLSearchParams(searchParams);
-  
-	  if (pathname === "/api/bookings") {
+
+	  // For the /api/customers endpoint
+	  if (pathname === "/api/customers") {
+
+		// If you did not use `DB` as your binding name, change it here
+		const { results } = await env.DB.prepare(
+		  "SELECT * FROM Customers",
+		).all();
+
+		return Response.json(results);
+	  } 
+	  // TODO: Insert the correct <URL>
+	  else if (pathname === "<URL>") {		// For the /api/bookings endpoint
+
+		// Get the booking_id parameter from the URL
 		const bookingId = params.get('booking_id');
+
+		// If the booking_id parameter is present
 		if(bookingId) {
+
 			// If you did not use `DB` as your binding name, change it here
 			const { results } = await env.DB.prepare(
-			"SELECT * FROM Bookings WHERE booking_id = ?",
+				// TODO: Insert the SQL query that accepts a booking_id parameter, use Booking table
 			)
 			.bind(bookingId)
 			.all();
+
 			return Response.json(results);
 		} else {
 			// If you did not use `DB` as your binding name, change it here
@@ -25,9 +42,10 @@ export interface Env {
 	  	}
 	}
   
+	// TODO: Insert the correct <URL>
 	return new Response(
 	"Call /api/customers to see all table entries\n" + 
-	"Call /api/bookings?booking_id= to see a specific booking entry",
+	"Call <URL>?booking_id= to see a specific booking entry",
 	);
 },
 } satisfies ExportedHandler<Env>;
