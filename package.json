@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "example": "node src/insertDB.js config/example.toml example && wrangler dev -c config/example.toml --local",
     "ex1": "wrangler dev -c config/ex1.toml --local",
     "ex2": "wrangler dev -c config/ex2.toml --local",
     "ex3": "wrangler dev -c config/ex3.toml --local",
+    "deploy_example": "wranlger deploy -c config/example.toml",
     "deploy_ex1": "wrangler deploy -c config/ex1.toml",
     "deploy_ex2": "wrangler deploy -c config/ex2.toml"
   },
@@ -14,6 +14,8 @@
     "@cloudflare/vitest-pool-workers": "^0.5.2",
     "vitest": "2.0.5",
     "wrangler": "^3.60.3"
+  },
+  "dependencies": {
+    "ex-1": "file:"
   }
 }
-    
