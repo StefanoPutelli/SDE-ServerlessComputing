@@ -33,22 +33,27 @@ Bindings are created updating the "wrangler.toml" file
             database_id = "<unique-ID-for-your-database>"   # Unique identifier of the database
         ```
 
-4. Insert data into the database
+4. Insert data into the database (locally)
     - Create the file "schema.sql" into the db directory and use it to create the database structure
     - Initialize the database with the command
         `npx wrangler d1 execute database --local --file=./schema.sql`
     - Check if all the data are inserted into the database with the command
         `npx wrangler d1 execute database --local --command="SELECT * FROM Customers"`
 
-5. Deploy the database
+5. Insert data into the database (remote)
     - To deploy remotely the db is used the command
         `npx wrangler d1 execute database --remote --file=./schema.sql`
     - Check if all the data are remotely deployed
         `npx wrangler d1 execute database --remote --command="SELECT * FROM Customers"`
-    - To deploy an empty database run the command `npx wrangler deploy`
+
+6. Copy `src/ex3/index.ts` into `db/src/`
+    - Now edit the file where such as suggested by TODO
+
+7. Deploy Worker
+    - To deploy run the command `npx wrangler deploy`
     - To visit the database go to the url "https://db.<your-subdomain>.workers.dev"
 
-6. Test the database locally
-    - Run the command 
-        `npx wrangler dev`
-    - As output is presented a URL to review the workers
+>6. Test the database locally
+>    - Run the command 
+>        `npx wrangler dev`
+>    - As output is presented a URL to review the workers
