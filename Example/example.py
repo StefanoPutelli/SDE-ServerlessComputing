@@ -58,12 +58,14 @@ def format_response(response):
 if __name__ == "__main__":
     # Ensure the script is executed with the correct arguments
     if len(sys.argv) != 2:
-        print("Usage: python example1.py <image_path>")
+        print("Usage: python example.py <image_path>")
         sys.exit(1)
 
     # Get the image path from the command-line argument
     image_path = sys.argv[1]
-    api_url = "https://image-classification-example.lorenzo-fasol.workers.dev"
+
+    # TODO: Replace with your API endpoint
+    api_url = "https://example.<your-domain>.workers.dev"
 
     try:
         # Send the image
