@@ -1,8 +1,16 @@
+# Exercises
+
 **Are mandatory**:
  - Cloudflare account
  - Node.js installed -> sudo apt install nodejs
 
-1. db project creation
+## Exercise 1
+
+Modify `src/ex1/index.js` and complete where TODO is present.
+
+## Exercise 2
+
+1. **db project creation**
 A new project "db" is created with
     `npm create cloudflare@latest -- db`
 
@@ -16,15 +24,14 @@ Now the project folder includes
     - A "Hello World" Worker in index.ts.
     - A wrangler.toml configuration file. wrangler.toml is how your db Worker accesses your D1 database.
 
-2. db creation
+2. **db creation**
 Enter into the "db" folder and run the command `npx wrangler d1 create database`
     - "wrangler d1" creates a database named as the string given as parameter (database)
     - Outputs the binding configuration needed in the next step
 
-3. Bind your Worker to your D1 database
+3. **Bind your Worker to your D1 database**
 Bindings are created updating the "wrangler.toml" file
-    1. The lines obtained as output of the 2nd step are copied
-    2. and added at the end of the "wrangler.toml" file
+    1. The lines obtained as output of the 2nd step have to be added at the end of the "wrangler.toml" file
 
         ```
             [[d1_databases]]
@@ -32,24 +39,27 @@ Bindings are created updating the "wrangler.toml" file
             database_name = "database"                      # Name given previously to the database
             database_id = "<unique-ID-for-your-database>"   # Unique identifier of the database
         ```
+## Exercise 3
 
-4. Insert data into the database (locally)
+4. **Insert data into the database (locally)**
     - Create the file "schema.sql" into the db directory and use it to create the database structure
     - Initialize the database with the command
         `npx wrangler d1 execute database --local --file=./schema.sql`
-    - Check if all the data are inserted into the database with the command
-        `npx wrangler d1 execute database --local --command="SELECT * FROM Customers"`
+    - Check if all the data are inserted into the database with the command, you have to create a query string
+        `npx wrangler d1 execute database --local --command=<query>`
 
-5. Insert data into the database (remote)
+5. **Insert data into the database (remote)**
     - To deploy remotely the db is used the command
         `npx wrangler d1 execute database --remote --file=./schema.sql`
-    - Check if all the data are remotely deployed
-        `npx wrangler d1 execute database --remote --command="SELECT * FROM Customers"`
+    - Check if all the data are remotely deployed, you have to create a query string
+        `npx wrangler d1 execute database --remote --command=<query>`
 
-6. Copy `src/ex3/index.ts` into `db/src/`
+## Mini Assignment
+
+6. **Copy `src/ex3/index.ts` into `db/src/`**
     - Now edit the file where such as suggested by TODO
 
-7. Deploy Worker
+7. **Deploy Worker**
     - To deploy run the command `npx wrangler deploy`
     - To visit the database go to the url "https://db.<your-subdomain>.workers.dev"
 
