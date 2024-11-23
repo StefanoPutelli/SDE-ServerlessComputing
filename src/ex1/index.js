@@ -1,5 +1,5 @@
 // Exercise 1 
-// Create a backend that respond 
+// Create a backend that responds to HTTP requests with the method GET, POST, PUT and DELETE.
 
 export default {
 	async fetch(request, env, ctx) {
