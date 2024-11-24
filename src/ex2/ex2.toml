@@ -6,4 +6,5 @@ compatibility_flags = ["nodejs_compat"]
 [[d1_databases]]
 binding = "DB" # i.e. available in your Worker on env.DB
 database_name = "ex2"
-database_id = "3ff3cf80-4db3-4444-aa06-2b12a3358924"
+database_id = ""
+
