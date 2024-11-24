@@ -15,12 +15,6 @@ export default {
 					"Content-Type": "text/html"
 				}
 			})
-		} else if(request.method === "DELETE"){
-			return new Response("I recived a DELET!", {
-				headers: {
-					"Content-Type": "text/html"
-				}
-			})
 		} else if(request.method === "PUT"){
 			return new Response("I recived a PUT!", {
 				headers: {
@@ -28,6 +22,7 @@ export default {
 				}
 			})
 		}
+		// TODO: In the case of a DELETE request, return a response with the message "I recived a DELETE!"
 	},
 };
 
