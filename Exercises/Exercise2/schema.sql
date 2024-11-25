@@ -1,3 +1,8 @@
+
+DROP TABLE IF EXISTS Payments;
+DROP TABLE IF EXISTS Bookings;
+DROP TABLE IF EXISTS Rooms;
+DROP TABLE IF EXISTS Customers;
 -- Creazione della tabella Customers
 CREATE TABLE Customers (
     customer_id INTEGER PRIMARY KEY,
@@ -9,7 +14,7 @@ CREATE TABLE Customers (
 
 -- Creazione della tabella Rooms
 CREATE TABLE Rooms (
-    room_id INTEGER PRIMARY KEY,
+    room_id INTEGER PRIMARY KEY AUTOINCREMENT,
     room_number INTEGER NOT NULL UNIQUE,
     room_type TEXT NOT NULL,
     price_per_night REAL NOT NULL
