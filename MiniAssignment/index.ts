@@ -10,7 +10,7 @@ export default {
 			// TODO: Change name as you like, max 20 characters
 			const name = "Clone";
 
-			// TODO: make a POST request to the FTEXT_URL with the name as text field in the post data
+			// TODO: make a POST request to the FTEXT_URL with the name as text field in the post data and await the response
 			
 
 			const data = await response.json();

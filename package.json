@@ -3,9 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "ex1": "wrangler dev -c config/ex1.toml --local",
-    "deploy_example": "wranlger deploy -c config/example.toml",
-    "deploy_ex1": "wrangler deploy -c config/ex1.toml"
+    "ex1": "wrangler dev -c Exercises/Exercise1/wrangler.toml --local",
+    "ex2": "wrangler dev -c Exercises/Exercise2/wrangler.toml --local",
+    "ex3": "cd Exercises/Exercise3 && npm run dev",
+    
+    "deploy_ex1": "wrangler deploy -c Exercises/Exercise1/wrangler.toml",
+    "deploy_ex2": "wrangler deploy -c Exercises/Exercise2/wrangler.toml",
+    "deploy_ex3": "cd Exercises/Exercise3 && npm run deploy",
+
+    "miniass": "wrangler dev -c MiniAssignment/wrangler.toml --local",
+    "deploy_miniass": "wrangler deploy -c MiniAssignment/wrangler.toml"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.5.2",
