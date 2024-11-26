@@ -1,5 +1,5 @@
 1. DB creation
-Enter into the "DB" folder and run the command "npx wrangler d1 create database"
+    - run in the root directory "npx wrangler d1 create database"
     - "wrangler d1" creates a database named as the string given as parameter (database)
         - Outputs the binding configuration needed in the next step
 
@@ -13,7 +13,6 @@ Bindings are created updating the "wrangler.toml" file
         database_id = "<unique-ID-for-your-database>"   # Unique identifier of the database
 
 3. Insert data into the database
-    - Create the file "schema.sql" into the DB directory and use it to create the database structure
     - Initialize the database with the command
         npx wrangler d1 execute database --local --file="Exercises/Exercise2-3/schema.sql" --config="Exercises/Exercise2-3/wrangler.toml"
     - Check if all the data are inserted into the database with the command
