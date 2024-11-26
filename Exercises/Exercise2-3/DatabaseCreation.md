@@ -12,12 +12,13 @@
 Bindings are created by updating the `wrangler.toml` file:
 1. Copy the lines obtained as output of the 2nd step
 2. Add them at the end of the `wrangler.toml` file:
-        ```toml
-        [[d1_databases]]
-        binding = "DB"                                  # Binding name used to reference this database in the Worker
-        database_name = "database"                      # Name given previously to the database
-        database_id = "<unique-ID-for-your-database>"   # Unique identifier of the database
-        ```
+	```txt
+	toml
+	[[d1_databases]]
+	binding = "DB"                                  # Binding name used to reference this database in the Worker
+	database_name = "database"                      # Name given previously to the database
+	database_id = "<unique-ID-for-your-database>"   # Unique identifier of the database
+	```
 
 ## 3. Insert data into the database
 - Initialize the database with the command:
