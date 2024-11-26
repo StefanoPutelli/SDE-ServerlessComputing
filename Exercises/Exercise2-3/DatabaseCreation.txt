@@ -33,9 +33,9 @@ Bindings are created updating the "wrangler.toml" file
 4. Insert data into the database
     - Create the file "schema.sql" into the DB directory and use it to create the database structure
     - Initialize the database with the command
-        "npx wrangler d1 execute database --local --file=./schema.sql"
+        npx wrangler d1 execute database --local --file="Exercises/Exercise2-3/schema.sql" --config="Exercises/Exercise2-3/wrangler.toml"
     - Check if all the data are inserted into the database with the command
-        npx wrangler d1 execute database --local --command="SELECT * FROM Customers"
+        npx wrangler d1 execute database --local --command="SELECT * FROM Customers" --config="Exercises/Exercise2-3/wrangler.toml"
 
 4.1. Write queries within the workers
     - Navigate to db worker and open the intex.ts file (Configuration)

@@ -28,8 +28,8 @@ pages_build_output_dir = ".vercel/output/static"
 # Docs: https://developers.cloudflare.com/pages/functions/bindings/#d1-databases
 [[d1_databases]]
 binding = "DB"
-database_name = "sdelab"
-database_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+database_name = "database"
+database_id = "201ede62-a07a-4f40-bed0-c667a120d1f9"
 
 # Bind a Durable Object. Durable objects are a scale-to-zero compute primitive based on the actor model.
 # Durable Objects can live for as long as needed. Use these when you need a long-running "server", such as in realtime apps.
