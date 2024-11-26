@@ -54,6 +54,23 @@ export async function DELETE(request: NextRequest) {
   const { room_id } = await request.json() as { room_id: number };
   
   //TODO: delete room from db
+  
+
+  if (result.success) {
+    return new Response(JSON.stringify({ success: true }), {
+      headers: {
+        'content-type': 'application/json',
+      },
+      status: 200
+    });
+  } else {
+    return new Response(JSON.stringify({ error: 'Failed to delete room' }), {
+      headers: {
+        'content-type': 'application/json',
+      },
+      status: 500
+    });
+  }
 
   
 }
