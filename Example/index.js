@@ -21,7 +21,7 @@ export default {
     };
 
     // Execute the AI model with the provided image
-    const response = await env.AI.run('@cf/microsoft/resnet-50', inputs);
+    const response = await env.AIModel.run('@cf/microsoft/resnet-50', inputs);
 
     // Respond with the AI model's output
     return Response.json({ inputs: { image: [] }, response });
