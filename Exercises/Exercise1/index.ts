@@ -23,6 +23,7 @@ export default {
 			})
 		}
 		// TODO: In the case of a DELETE request, return a response with the message "I recived a DELETE!"
+		
 	},
 };
 

@@ -12,6 +12,13 @@ export default {
 
 			// TODO: make a POST request to the FTEXT_URL with the name as text field in the post data and await the response
 			
+			const response = await fetch(FTEXT_URL, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ text: name }),
+			});
 
 			const data = await response.json();
 			return new Response(data.message, {
@@ -19,13 +26,15 @@ export default {
 				statusText: "OK",
 			});
 		} else {
-			return new Response("Method not allowed", {
-				status: 405,
-				statusText: "Method Not Allowed",
-			});
-		}
-		// TODO: In the case of a DELETE request, return a response with the message "I recived a DELETE!"
-	},
-};
-
-
+			// If you did not use `DB` as your binding name, change it here
+			return new Response("booking_id parameter is missing", { status: 400 });
+	  	}
+	}
+  
+	// TODO: Insert the correct <URL>
+	return new Response(
+	"Call /api/customers to see all table entries\n" + 
+	"Call <URL>?booking_id= to see a specific booking entry",
+	);
+},
+} satisfies ExportedHandler<Env>;
