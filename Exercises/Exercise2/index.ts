@@ -48,7 +48,7 @@ export default {
   
 	  // Default response
 	  return new Response(
-		"Use /api/customers, /api/rooms, /api/bookings, or /api/payments",
+		"Use <url>/api/customers, <url>/api/rooms, <url>/api/bookings, or <url>/api/payments",
 		{ headers: { "Content-Type": "text/plain" } }
 	  );
 	},
