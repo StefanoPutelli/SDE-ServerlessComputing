@@ -46,7 +46,7 @@ export default {
 		//TODO: Insert the whole code
 	  }
   
-	  // Risposta predefinita per richieste a percorsi non definiti
+	  // Default response
 	  return new Response(
 		"Use /api/customers, /api/rooms, /api/bookings, or /api/payments",
 		{ headers: { "Content-Type": "text/plain" } }
