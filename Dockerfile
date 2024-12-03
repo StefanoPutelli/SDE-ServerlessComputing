@@ -16,7 +16,6 @@ COPY package*.json ./
 
 # Installa le dipendenze del progetto, inclusi Wrangler e Vitest come devDependencies
 RUN npm install
-RUN Exercises/Exercise3 && npm install
 RUN npm install -g wrangler
 
 # Copia il resto del codice sorgente nell'immagine

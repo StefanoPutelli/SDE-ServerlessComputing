@@ -1,6 +1,4 @@
-name = "ex-1"
-main = "./index.js"
+name = "ex-2"
+main = "./index.ts"
 compatibility_date = "2024-10-11"
 compatibility_flags = ["nodejs_compat"]
-
-

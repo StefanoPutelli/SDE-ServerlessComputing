@@ -2,9 +2,9 @@ export default {
 	async fetch(request, env) {
 	  const { pathname } = new URL(request.url);
   
-	  // Gestiamo le operazioni per Customers
+	  // Manage operations for Customers
 	  if (pathname.startsWith("/api/customers")) {
-		// Operazione GET: selezioniamo tutti i clienti
+		// Method GET: select all customers
 		if (request.method === "GET") {
 		  const { results } = await env.DB.prepare(
 			"SELECT * FROM Customers"
@@ -21,32 +21,32 @@ export default {
 		);
 	  }
   
-	  // Gestiamo le operazioni per Rooms
+	  // Manage operations for Rooms
 	  if (pathname.startsWith("/api/rooms")) {
-		// Operazione GET: selezioniamo tutte le stanze
+		// Method GET: select all rooms
 		if (request.method === "GET") {
 
-		  // Insert the code to perform the query
+		  // TODO: Insert the code to perform the query
   
 		  return new Response(JSON.stringify(results), {
 			headers: { "Content-Type": "application/json" }
 		  });
 		}
   
-		// Build the 404 response
+		// TODO: Build the 404 response
 	  }
   
-	  // Gestiamo le operazioni per Bookings
+	  // Manage operations for Bookings
 	  if (pathname.startsWith("/api/bookings")) {
-		// Insert the whole code
+		// TODO: Insert the whole code
 	  }
   
-	  // Gestiamo le operazioni per Payments
+	  // Manage operations for Payments
 	  if (pathname.startsWith("/api/payments")) {
-		// Insert the whole code
+		// TODO: Insert the whole code
 	  }
   
-	  // Risposta predefinita per richieste a percorsi non definiti
+	  // Default response for not defined paths
 	  return new Response(
 		"Use /api/customers, /api/rooms, /api/bookings, or /api/payments",
 		{ headers: { "Content-Type": "text/plain" } }
