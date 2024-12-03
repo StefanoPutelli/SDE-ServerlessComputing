@@ -26,7 +26,7 @@ export default {
 		// Operazione GET: selezioniamo tutte le stanze
 		if (request.method === "GET") {
 
-		  // Insert the code to perform the query
+		  // TODO: Insert the code to perform the query
   
 		  return new Response(JSON.stringify(results), {
 			headers: { "Content-Type": "application/json" }
