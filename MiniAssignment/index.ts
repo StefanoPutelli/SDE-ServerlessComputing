@@ -1,40 +1,51 @@
-const FTEXT_URL = "https://4e0a9eeb.miniass.pages.dev/api/receivetext";
-
-interface requestBody {
-	text: string;
+export interface Env {
+	// If you set another name in wrangler.toml as the value for 'binding',
+	// replace "DB" with the variable name you defined.
+	DB: D1Database;
 }
 
 export default {
-	async fetch(request, env, ctx) {
-		if (request.method === "GET") {
-			// TODO: Change name as you like, max 20 characters
-			const name = "Clone";
+	async fetch(request, env): Promise<Response> {
+		const { pathname, searchParams } = new URL(request.url);
+		const params = new URLSearchParams(searchParams);
 
-			// TODO: make a POST request to the FTEXT_URL with the name as text field in the post data and await the response
-			
-			const response = await fetch(FTEXT_URL, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ text: name }),
-			});
+		// For the /api/customers endpoint
+		if (pathname === "/api/customers") {
 
-			const data = await response.json();
-			return new Response(data.message, {
-				status: 200,
-				statusText: "OK",
-			});
-		} else {
 			// If you did not use `DB` as your binding name, change it here
-			return new Response("booking_id parameter is missing", { status: 400 });
-	  	}
-	}
-  
-	// TODO: Insert the correct <URL>
-	return new Response(
-	"Call /api/customers to see all table entries\n" + 
-	"Call <URL>?booking_id= to see a specific booking entry",
-	);
-},
+			const { results } = await env.DB.prepare(
+				"SELECT * FROM Customers",
+			).all();
+
+			return Response.json(results);
+		}
+		// TODO: Insert the correct <URL>
+		else if (pathname === "<URL>") {		// For the /api/bookings endpoint
+
+			// Get the booking_id parameter from the URL
+			const bookingId = params.get('booking_id');
+
+			// If the booking_id parameter is present
+			if (bookingId) {
+
+				// If you did not use `DB` as your binding name, change it here
+				const { results } = await env.DB.prepare(
+					// TODO: Insert the SQL query that accepts a booking_id parameter, use Booking table
+				)
+					.bind(bookingId)
+					.all();
+
+				return Response.json(results);
+			} else {
+				// If you did not use `DB` as your binding name, change it here
+				return new Response("booking_id parameter is missing", { status: 400 });
+			}
+		}
+
+		// TODO: Insert the correct <URL>
+		return new Response(
+			"Call /api/customers to see all table entries\n" +
+			"Call <URL>?booking_id= to see a specific booking entry",
+		);
+	},
 } satisfies ExportedHandler<Env>;
